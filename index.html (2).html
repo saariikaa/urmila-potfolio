@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urmila Bishwokarma — Software Engineer &amp; Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#3B2E2A;
+    --ink-soft:#6E5B54;
+    --page:#F3E4D3;
+    --paper:#FFFBF5;
+    --panel:#FBF0E1;
+    --plum:#6B3F4D;
+    --plum-deep:#4E2C38;
+    --plum-soft:#8C5B69;
+    --gold:#C08A3E;
+    --gold-light:#E7C88B;
+    --line:#E3CCA9;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--page);
+    color:var(--ink);
+    font-family:'Lora',serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .shell{
+    max-width:1040px;
+    margin:32px auto;
+    display:grid;
+    grid-template-columns:270px 1fr;
+    gap:0;
+    background:var(--paper);
+    box-shadow:0 18px 50px -20px rgba(75,45,45,0.35);
+    border-radius:14px;
+    overflow:hidden;
+  }
+
+  /* ---------- SIDEBAR ---------- */
+  .sidebar{
+    background:var(--plum-deep);
+    background-image:
+      radial-gradient(circle at 20% 15%, rgba(224,184,128,0.16), transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(224,184,128,0.10), transparent 40%);
+    color:#F3E4D3;
+    padding:44px 30px 38px;
+  }
+  .monogram{
+    width:64px;height:64px;
+    border-radius:50%;
+    border:2px solid var(--gold-light);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:22px;
+    color:var(--gold-light);
+    margin-bottom:22px;
+  }
+  .sb-name{
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:24px;
+    line-height:1.25;
+    margin:0 0 8px;
+    color:#FBF0E1;
+  }
+  .sb-role{
+    font-family:'Inter',sans-serif;
+    font-size:12px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--gold-light);
+    margin-bottom:22px;
+  }
+  .sb-tagline{
+    font-family:'Lora',serif;
+    font-style:italic;
+    font-size:14.5px;
+    color:#D9C6B8;
+    margin-bottom:28px;
+    padding-bottom:28px;
+    border-bottom:1px solid rgba(224,184,128,0.28);
+  }
+  .sb-block-label{
+    font-family:'Inter',sans-serif;
+    font-size:10.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold-light);
+    margin-bottom:12px;
+    margin-top:26px;
+  }
+  .sb-block-label:first-of-type{margin-top:0;}
+  .sb-links{display:flex;flex-direction:column;gap:9px;}
+  .sb-links a{
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    color:#F3E4D3;
+    text-decoration:none;
+    border-bottom:1px solid rgba(224,184,128,0.35);
+    padding-bottom:2px;
+    width:fit-content;
+  }
+  .sb-links a:hover{color:var(--gold-light);border-color:var(--gold-light);}
+  .sb-tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .sb-tag{
+    font-family:'Inter',sans-serif;
+    font-size:11.5px;
+    padding:4px 10px;
+    background:rgba(224,184,128,0.14);
+    border:1px solid rgba(224,184,128,0.3);
+    border-radius:20px;
+    color:#F3E4D3;
+  }
+  .sb-fact{margin-bottom:14px;font-size:13px;color:#E2D3C4;}
+  .sb-fact strong{display:block;color:var(--gold-light);font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:3px;font-weight:600;}
+
+  /* ---------- MAIN ---------- */
+  .main{padding:44px 46px 50px;}
+  section{padding-bottom:38px;margin-bottom:38px;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .section-label{
+    font-family:'Inter',sans-serif;
+    font-size:11.5px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:8px;
+    font-weight:600;
+  }
+  h2{
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:26px;
+    margin:0 0 20px;
+    color:var(--plum-deep);
+  }
+  p{color:var(--ink-soft);font-size:15.5px;margin:0 0 14px;}
+
+  /* ---------- ABOUT PANEL ---------- */
+  .panel{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:22px 24px;
+    margin-top:18px;
+  }
+  .fact-row{
+    display:flex;
+    gap:14px;
+    padding:9px 0;
+    font-size:14px;
+  }
+  .fact-row + .fact-row{border-top:1px solid var(--line);}
+  .fact-label{
+    font-family:'Inter',sans-serif;
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--plum);
+    min-width:140px;
+    flex-shrink:0;
+    padding-top:1px;
+    font-weight:600;
+  }
+
+  /* ---------- EXPERIENCE ---------- */
+  .role-card{
+    background:var(--panel);
+    border-left:4px solid var(--gold);
+    border-radius:0 10px 10px 0;
+    padding:20px 24px;
+  }
+  .role-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:4px;}
+  .role-title{font-family:'Playfair Display',serif;font-weight:700;font-size:18px;color:var(--plum-deep);}
+  .role-meta{font-family:'Inter',sans-serif;font-size:11.5px;color:var(--ink-soft);letter-spacing:0.03em;}
+  ul.deliverables{margin:14px 0 0;padding:0;list-style:none;}
+  ul.deliverables li{
+    position:relative;
+    padding-left:22px;
+    margin-bottom:11px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+  ul.deliverables li:before{
+    content:"◆";
+    position:absolute;
+    left:0; top:1px;
+    color:var(--gold);
+    font-size:9px;
+  }
+  .fill-in{
+    background:#FFFBF5;
+    color:var(--plum);
+    padding:1px 7px;
+    border-radius:3px;
+    font-size:12px;
+    font-family:'Inter',sans-serif;
+    border:1px dashed var(--gold);
+  }
+
+  /* ---------- PROJECTS ---------- */
+  .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .proj-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:18px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .proj-name{
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:16px;
+    color:var(--plum-deep);
+  }
+  .proj-desc{font-size:13.5px;color:var(--ink-soft);margin:0;flex:1;}
+  .proj-link{
+    font-family:'Inter',sans-serif;
+    font-size:11.5px;
+    letter-spacing:0.03em;
+    color:var(--plum);
+    text-decoration:none;
+    border-bottom:1px solid var(--gold);
+    padding-bottom:1px;
+    width:fit-content;
+  }
+  .status-tag{
+    display:inline-block;
+    font-family:'Inter',sans-serif;
+    font-size:9.5px;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    padding:2px 8px;
+    border-radius:20px;
+    margin-left:6px;
+    vertical-align:middle;
+    font-weight:700;
+  }
+  .status-active{background:#E7C88B;color:#5C3E10;}
+  .status-course{background:#DCC1CB;color:#5A2E3A;}
+
+  /* ---------- SKILLS ---------- */
+  .skill-groups{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .skill-group-label{
+    font-family:'Inter',sans-serif;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--plum);
+    display:block;
+    margin-bottom:10px;
+    font-weight:600;
+  }
+  .tag{
+    display:inline-block;
+    font-family:'Lora',serif;
+    font-size:14px;
+    padding:5px 12px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:20px;
+    margin:0 6px 6px 0;
+    color:var(--ink);
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-panel{
+    background:var(--plum-deep);
+    color:#F3E4D3;
+    border-radius:10px;
+    padding:26px 26px;
+    text-align:left;
+  }
+  .contact-panel h2{color:#FBF0E1;margin-bottom:10px;}
+  .contact-panel p{color:#D9C6B8;}
+  .contact-links{display:flex;flex-wrap:wrap;gap:16px;margin-top:14px;}
+  .contact-links a{
+    font-family:'Inter',sans-serif;
+    font-size:13.5px;
+    text-decoration:none;
+    color:#F3E4D3;
+    border-bottom:1px solid var(--gold-light);
+    padding-bottom:2px;
+  }
+  .contact-links a:hover{color:var(--gold-light);}
+  .foot-note{margin-top:16px;font-size:11px;color:#B9A491;font-family:'Inter',sans-serif;}
+
+  @media(max-width:820px){
+    .shell{grid-template-columns:1fr;margin:0;border-radius:0;}
+    .sidebar{padding:36px 24px;}
+    .main{padding:36px 24px 44px;}
+    .proj-grid{grid-template-columns:1fr;}
+    .skill-groups{grid-template-columns:1fr;}
+  }
+
+  a:focus-visible, .btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <aside class="sidebar">
+    <div class="monogram">UB</div>
+    <h1 class="sb-name">Urmila<br>Bishwokarma</h1>
+    <div class="sb-role">Software Engineer &amp; Data Analyst</div>
+    <p class="sb-tagline">I write the code that moves data, and the reports that explain what it means.</p>
+
+    <div class="sb-block-label">Contact</div>
+    <div class="sb-links">
+      <a href="mailto:sarikasunaf@gmail.com">sarikasunaf@gmail.com</a>
+      <a href="https://github.com/saariikaa" target="_blank" rel="noopener">github.com/saariikaa</a>
+      <a href="https://www.linkedin.com/in/sarika-sunar-a20706230/" target="_blank" rel="noopener">linkedin.com/in/sarika-sunar</a>
+    </div>
+
+    <div class="sb-block-label">Based in</div>
+    <div class="sb-fact">Darwin, NT — full Australian working rights</div>
+
+    <div class="sb-block-label">Core Skills</div>
+    <div class="sb-tags">
+      <span class="sb-tag">Python</span>
+      <span class="sb-tag">SQL</span>
+      <span class="sb-tag">Power BI</span>
+      <span class="sb-tag">Django REST</span>
+      <span class="sb-tag">BPMN 2.0</span>
+    </div>
+  </aside>
+
+  <main class="main">
+    <section id="about">
+      <span class="section-label">About</span>
+      <h2>Background</h2>
+      <p>I hold a Bachelor of Information Technology from Charles Darwin University and I'm currently working through ITIL Foundation. At Carpentaria I work as both a software engineer and a data analyst — the two aren't separate hats, they're the same job seen from different ends. I build the Power BI reports and SQL queries that turn raw data into something people can act on, model business processes in BPMN 2.0, and write the Python code and internal tools that make that data pipeline actually run. I'm extending that engineering side further with Django REST Framework, building backend systems rather than just reporting on the data they produce.</p>
+      <div class="panel">
+        <div class="fact-row">
+          <span class="fact-label">Education</span>
+          <span>Bachelor of Information Technology, Charles Darwin University · ITIL Foundation (in progress)</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Currently learning</span>
+          <span>Django REST Framework — building CRUD APIs, auth, and testing from the ground up</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <span class="section-label">Experience</span>
+      <h2>What I Build at Carpentaria</h2>
+      <div class="role-card">
+        <div class="role-header">
+          <span class="role-title">Software Engineer &amp; Data Analyst</span>
+          <span class="role-meta">Carpentaria · Darwin, NT</span>
+        </div>
+        <ul class="deliverables">
+          <li>Write Python and SQL to build and maintain the data pipelines and internal tools that move information between systems.</li>
+          <li>Build and maintain Power BI reports and dashboards, turning that data into something teams actually use to make decisions.</li>
+          <li>Model business processes using BPMN 2.0 — mapping current-state workflows and identifying where they break down.</li>
+          <li>Lead requirements elicitation and coordinate User Acceptance Testing (UAT) for system and process changes.</li>
+          <li>Develop internal eLearning content using Moodle LMS, PowerPoint, and Canva, supporting staff training and onboarding.</li>
+        </ul>
+      </div>
+      <p style="margin-top:16px;"><span class="fill-in">add specific outcomes here</span> — e.g. a report that replaced a manual process, a data integration that fixed a recurring error, or a UAT cycle you ran end-to-end.</p>
+    </section>
+
+    <section id="projects">
+      <span class="section-label">Projects</span>
+      <h2>Recent Work &amp; Practice</h2>
+      <div class="proj-grid">
+        <div class="proj-card">
+          <span class="proj-name">Email Simulator <span class="status-tag status-active">Active</span></span>
+          <p class="proj-desc">Multi-class email management system in Python — sending, receiving, and organising messages via OOP design.</p>
+          <a class="proj-link" href="https://github.com/saariikaa/email-simulator-" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+        <div class="proj-card">
+          <span class="proj-name">Musical Instruments OOP</span>
+          <p class="proj-desc">Python OOP practice project — inheritance, polymorphism, and class design fundamentals.</p>
+          <a class="proj-link" href="https://github.com/saariikaa/python-oop-musical-instruments" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+        <div class="proj-card">
+          <span class="proj-name">Python Practice <span class="status-tag status-course">fCC</span></span>
+          <p class="proj-desc">freeCodeCamp exercises — string manipulation, validation, data structure fundamentals.</p>
+          <a class="proj-link" href="https://github.com/saariikaa/python-practise-" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+        <div class="proj-card">
+          <span class="proj-name">HIT339 <span class="status-tag status-course">CDU</span></span>
+          <p class="proj-desc">Group coursework project, Charles Darwin University. <span class="fill-in">add description</span></p>
+          <a class="proj-link" href="https://github.com/zaveria1/Hit339" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <span class="section-label">Skills</span>
+      <h2>Toolkit</h2>
+      <div class="skill-groups">
+        <div>
+          <span class="skill-group-label">Data &amp; BI</span>
+          <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Data Integration</span>
+        </div>
+        <div>
+          <span class="skill-group-label">Backend &amp; Development</span>
+          <span class="tag">Python</span><span class="tag">Django REST Framework</span><span class="tag">Git / GitHub</span>
+        </div>
+        <div>
+          <span class="skill-group-label">Process &amp; Delivery</span>
+          <span class="tag">BPMN 2.0</span><span class="tag">Requirements Elicitation</span><span class="tag">UAT Coordination</span>
+        </div>
+        <div>
+          <span class="skill-group-label">eLearning</span>
+          <span class="tag">Moodle LMS</span><span class="tag">PowerPoint</span><span class="tag">Canva</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <span class="section-label">Contact</span>
+      <div class="contact-panel">
+        <h2 style="font-size:22px;">Let's Talk</h2>
+        <p>Open to backend developer and software developer roles across the NT and remote. Happy to share more detail on any of the work above.</p>
+        <div class="contact-links">
+          <a href="mailto:sarikasunaf@gmail.com">sarikasunaf@gmail.com</a>
+          <a href="https://github.com/saariikaa" target="_blank" rel="noopener">github.com/saariikaa</a>
+          <a href="https://www.linkedin.com/in/sarika-sunar-a20706230/" target="_blank" rel="noopener">linkedin.com/in/sarika-sunar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+</body>
+</html>
